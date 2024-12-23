@@ -44,3 +44,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
 
 // Additional routes and includes
 require __DIR__.'/auth.php';
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
